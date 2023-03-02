@@ -49,4 +49,4 @@ npm install
 ## Questions
   For any questions, contact me at :
     Github: https://github.com/adinair007
-    [Email: adinair.in@outlook.com](mailto:adinair.in@outlook.c
+    [Email: adinair.in@outlook.com](mailto:adinair.in@outlook.com)
