@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
@@ -25,6 +24,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
 
+app.use(routes);
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
