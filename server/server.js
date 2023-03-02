@@ -2,7 +2,7 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 const db = require("./config/connection");
-const routes = require("./routes");
+// const routes = require("./routes");
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
 
@@ -22,7 +22,7 @@ app.use(express.json());
 // if we're in production, serve client/build as static assets
 app.use(express.static(path.join(__dirname, "../client/build")));
 
-app.use(routes);
+// app.use(routes);
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
