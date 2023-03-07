@@ -33,6 +33,7 @@ const resolvers = {
     },
 
     login: async (parent, args) => {
+      console.log("LOGIN ON SERVER!")
       const { email, password } = args;
       const user = await User.findOne({ email });
       if (!user) {
@@ -52,11 +53,13 @@ const resolvers = {
 
     // Add a third argument to the resolver to access data in our `context`
     saveBook: async (parent, args, context) => {
+      console.log("SAVE BOOK ON SERVER:", args);
+      console.log(context);
       if (context.user) {
         const { bookData } = args;
-        const updatedUser = await User.findOneAndUpdate(
+        const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { savedBooks: bookData } },
+          { $push: { savedBooks: bookData } },
           { new: true, runValidators: true }
         );
         return updatedUser;
