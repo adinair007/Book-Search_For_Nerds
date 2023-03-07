@@ -34,7 +34,7 @@ git clone
 npm install
 ```
 ## Usage
-  1. Run `npm start` in terminal to start. 
+  1. Run `npm run develop` in terminal to start. 
   2. Follow through the prompts as required. 
   OR
   Access the website through the deployed link.
